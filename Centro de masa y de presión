@@ -1,0 +1,36 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Parámetros del cohete edtiables.
+L = 1.75  # longitud del cohete en metros
+D = 0.1  # diámetro del cohete en metros
+CM = 0.746  # centro de masa en metros desde la base
+CP = 0.975 # centro de presión en metros desde la base
+
+# Crear la figura del cohete
+fig, ax = plt.subplots(figsize=(6, 12))
+
+# Dibujar el cuerpo del cohete
+body = plt.Rectangle((0, 0), D, L, edgecolor='black', facecolor='none')
+ax.add_patch(body)
+
+# Dibujar el centro de masa (CM)
+ax.plot(D/2, CM, 'ro', label='Centro de Masa (CM)')
+ax.text(D/2 + 0.02, CM, 'CM', verticalalignment='bottom', horizontalalignment='right')
+
+# Dibujar el centro de presión (CP)
+ax.plot(D/2, CP, 'bo', label='Centro de Presión (CP)')
+ax.text(D/2 + 0.02, CP, 'CP', verticalalignment='bottom', horizontalalignment='right')
+
+# Ajustes finales del gráfico
+ax.set_xlim(-0.1, 0.2)
+ax.set_ylim(0, 1.2)
+ax.set_aspect('equal')
+ax.set_xlabel('Diámetro (m)')
+ax.set_ylabel('Longitud (m)')
+ax.legend()
+ax.grid(True)
+ax.set_title('Diagrama del Cohete de Agua')
+
+# Mostrar el gráfico
+plt.show()
