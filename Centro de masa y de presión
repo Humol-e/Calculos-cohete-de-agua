@@ -5,7 +5,7 @@ import numpy as np
 L = 1.75  # longitud del cohete en metros
 D = 0.1  # diámetro del cohete en metros
 CM = 0.746  # centro de masa en metros desde la base
-CP = 0.975 # centro de presión en metros desde la base
+CP = 0.875 # centro de presión en metros desde la base
 
 # Crear la figura del cohete
 fig, ax = plt.subplots(figsize=(6, 12))
